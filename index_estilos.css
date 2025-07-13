@@ -1,0 +1,70 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(247, 231, 255);
+}
+header, footer {
+    background-color: rgb(227, 160, 253);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0.5rem;
+}
+nav {
+    background-color: rgb(128, 68, 156);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+nav a {
+    text-decoration: none;
+    color: #0d0731; 
+    font-weight: bold;
+}
+main {
+    padding: 2rem;
+    display: flex;
+    gap: 3rem;
+}
+article, aside {
+    width: 60%;
+}
+strong {
+    color: #000000;
+}
+blockquote{
+    font-style: italic;
+    color: 550c0c;
+} 
+article {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+aside {
+    background-color: rgb(205, 162, 213);
+    padding: 1rem;
+    border-left: 4px solid rgb(102, 73, 105);
+    border-radius: 7px;
+}
+th {
+    background-color: rgb(155, 118, 161);
+}
+th, td {
+    border: 1px solid black;
+    padding: 0.5rem;
+} 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+img {
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+footer a {
+    color: rgb(148, 87, 141);
+    text-decoration: none;
+}
