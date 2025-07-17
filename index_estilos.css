@@ -68,3 +68,9 @@ footer a {
     color: rgb(148, 87, 141);
     text-decoration: none;
 }
+.titulo {
+    color: #372696;
+}
+.subrayado {
+    text-decoration: underline;
+}
