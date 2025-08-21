@@ -9,9 +9,24 @@ h2 {
 .oscuro{
     background-color: rgb(77, 58, 58);
     color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size:larger;
 }
 /*selector ID */
 #biografia {
     background-color:rgb(231, 224, 214);
     color:rgb(73, 61, 46);
 }
+footer a {
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: rgb(236, 202, 152);
+  }
+  header {
+    background-image: url(./fondo.jpg);
+    padding: 3rem 1rem;
+    text-align: center;
+  }
