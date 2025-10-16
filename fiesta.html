@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Asistencia</title>
+</head>
+<body>
+  <h2>Fiesta de Fin de Año</h2>
+ 
+  <label for="nombre">Nombre del estudiante:</label><br>
+  <input type="text" id="nombre" placeholder="Escribe tu nombre"><br><br>
+
+  <label>¿Asistirás a la fiesta?</label><br>
+  <input type="radio" name="asistencia" value="Sí"> Sí<br>
+  <input type="radio" name="asistencia" value="No"> No<br><br>
+
+  <button onclick="mostrarMensaje()">Confirmar</button>
+
+  <p id="mensaje" style="font-weight: bold; margin-top: 15px;"></p>
+
+  <script>
+    function mostrarMensaje() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const seleccion = document.querySelector('input[name="asistencia"]:checked');
+      const mensaje = document.getElementById("mensaje");
+
+      if (!nombre || !seleccion) {
+        mensaje.textContent = "Por favor, completá tu nombre y elegí una opción.";
+        mensaje.style.color = "red";
+        return;
+      }
+
+      if (seleccion.value === "Sí") {
+        mensaje.textContent = `¡Gracias por confirmar, ${nombre}! Nos vemos en la fiesta 🎊`;
+        mensaje.style.color = "green";
+      } else {
+        mensaje.textContent = `¡Qué pena, ${nombre}! Te vamos a extrañar 😢`;
+        mensaje.style.color = "blue";
+      }
+    }
+  </script>
+</body>
+</html>

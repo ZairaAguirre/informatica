@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Estudiante</title>
+</head>
+<body>
+  <h2>Registro de Estudiante</h2>
+
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" placeholder="Escribí tu nombre"><br><br>
+
+  <label for="apellido">Apellido:</label><br>
+  <input type="text" id="apellido" placeholder="Escribí tu apellido"><br><br>
+
+  <label for="curso">Curso:</label><br>
+  <input type="text" id="curso" placeholder="Ej: 3°A, 5°B..."><br><br>
+
+  <button onclick="mostrarBienvenida()">Registrar</button>
+
+  <script>
+    function mostrarBienvenida() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const apellido = document.getElementById("apellido").value.trim();
+      const curso = document.getElementById("curso").value.trim();
+
+      if (!nombre || !apellido || !curso) {
+        alert("Por favor, completá todos los campos antes de continuar.");
+        return;
+      }
+
+      // Mensaje de bienvenida
+      const mensaje = `
+        <html>
+          <head>
+            <title>Bienvenida</title>
+            <meta charset="UTF-8">
+          </head>
+          <body style="font-family: Arial; text-align: center; margin-top: 50px;">
+            <h1>¡Bienvenido/a, ${nombre} ${apellido}! 👋</h1>
+            <h2>Curso: ${curso}</h2>
+            <p>Nos alegra tenerte con nosotros. ¡Que tengas un gran año! 🎉</p>
+          </body>
+        </html>
+      `;
+
+      // Abrir nueva ventana
+      const nuevaVentana = window.open("", "_blank");
+      nuevaVentana.document.write(mensaje);
+    }
+  </script>
+</body>
+</html>
