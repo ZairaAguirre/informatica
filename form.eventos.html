@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de días hasta un evento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contenedor {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+      width: 90%;
+      font-size: 16px;
+    }
+
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    p {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h2>Calculadora de eventos</h2>
+    <input type="text" id="nombreEvento" placeholder="Nombre del evento">
+    <input type="date" id="fechaEvento">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    function calcular() {
+      const nombre = document.getElementById('nombreEvento').value.trim();
+      const fecha = document.getElementById('fechaEvento').value;
+      const resultado = document.getElementById('resultado');
+
+      if (!nombre || !fecha) {
+        resultado.textContent = "Por favor, complete todos los campos.";
+        return;
+      }
+
+      const hoy = new Date();
+      const fechaEvento = new Date(fecha);
+
+      // Normalizar horas para evitar errores por zona horaria
+      hoy.setHours(0,0,0,0);
+      fechaEvento.setHours(0,0,0,0);
+
+      const diferencia = fechaEvento - hoy;
+      const dias = Math.round(diferencia / (1000 * 60 * 60 * 24));
+
+      if (dias > 0) {
+        resultado.textContent = `Faltan ${dias} día${dias === 1 ? '' : 's'} para ${nombre}.`;
+      } else if (dias === 0) {
+        resultado.textContent = `¡El evento "${nombre}" es hoy! 🎉`;
+      } else {
+        resultado.textContent = `El evento "${nombre}" ya ocurrió.`;
+      }
+    }
+  </script>
+</body>
+</html>
